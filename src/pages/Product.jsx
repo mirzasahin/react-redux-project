@@ -23,12 +23,11 @@ const Product = () => {
     }
   };
 
-  console.log(data)
+  console.log('data: ', data )
 
   const buttonFunc = () => {
-    dispatch(createDataFunc(productInfo))
+    dispatch(createDataFunc({...productInfo, id: data.length + 1}))
     dispatch(modalFunc())
-    console.log(data.item.name, data.item.price)
   }
 
   const contentModal = (
@@ -62,7 +61,7 @@ const Product = () => {
   )
   return (
     <div>
-      <div>
+      <div className="flex flex-center flex-wrap">
         {data?.map((dt, i) => (
           <ProductCard key={i} dt={dt}/>
  
