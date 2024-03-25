@@ -12,6 +12,10 @@ export const dataSlice = createSlice({
       state.data = [...state.data, action.payload]
     },
 
+    sortingDataFunc: (state, action) => {
+      state.data = [...state.data.sort((a,b) => action.payload == "asc" ? a.price - b.price : action.payload == "desc" ? b.price - a.price : null)]
+    },
+
     deleteDataFunc: (state, action) => {
       state.data = [...state.data.filter(dt => dt.id != action.payload)]
     },
@@ -24,6 +28,6 @@ export const dataSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { createDataFunc, deleteDataFunc, updateDataFunc } = dataSlice.actions;
+export const { createDataFunc, deleteDataFunc, updateDataFunc, sortingDataFunc } = dataSlice.actions;
 
 export default dataSlice.reducer;

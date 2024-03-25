@@ -1,6 +1,7 @@
 import { MdPostAdd } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { modalFunc } from "../redux/modalSlice";
+import { sortingDataFunc } from "../redux/dataSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,8 @@ const Header = () => {
 
       <div className="flex items-center gap-5">
         <div className="text-black">
-          <select className="h-10 rounded-lg" name="" id="">
+          <select onChange={(e) => dispatch(sortingDataFunc(e.target.value))} className="h-10 rounded-lg" name="" id="">
+            <option disabled selected>SEÇ</option>
             <option value="asc">ARTAN</option>
             <option value="desc">AZALAN</option>
           </select>
