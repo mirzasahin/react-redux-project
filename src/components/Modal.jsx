@@ -11,7 +11,7 @@ const Modal = ({ title, content, btnText, btnFunc }) => {
       <div className="w-1/3 bg-blue-100 shadow-lg rounded-md p-4">
         <div className="border-b py-3 flex items-center justify-between">
           <div className="text-2xl">{title}</div>
-          <GrClose className="text-black cursor-pointe px-1 hover:bg-red-500 rounded-lg hover:text-white transition " onClick={() => dispatch(modalFunc())} size={24} />
+          <GrClose className="text-black cursor-pointe px-1 hover:bg-red-500 rounded-lg hover:text-white transition duration-75 " onClick={() => dispatch(modalFunc())} size={24} />
         </div>
         {content}
       </div>
